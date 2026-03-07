@@ -1,223 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="vgf9gc_EUml36Sk_WX7mDDirrN53E7NBX8C-hNFmnlM" />
+  <meta name="description" content="Umesh Chandra Jangam is a civil and structural engineer researching Mars habitat systems, geotechnical simulation, and seismic structural design." />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umesh Chandra Jangam | Civil Engineer | Mars Habitat Research</title>
 
-<meta name="google-site-verification" content="vgf9gc_EUml36Sk_WX7mDDirrN53E7NBX8C-hNFmnlM">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<title>Umesh Chandra Jangam | Civil Engineer | Mars Habitat Research</title>
+  <style>
+    :root{
+      --bg:#040816;
+      --panel:#0f1931;
+      --panel-2:#09152e;
+      --text:#edf4ff;
+      --muted:#9eb2cf;
+      --accent:#70c7ff;
+      --accent-2:#55e0ff;
+      --line:rgba(255,255,255,.08);
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:linear-gradient(180deg,#040816 0%,#061024 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-<style>
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(4,8,22,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      padding:14px 20px;
+      text-align:center;
+    }
 
-body{
-font-family:Inter,system-ui;
-background:#050b1b;
-color:#edf4ff;
-margin:0;
-}
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin:0 14px;
+      font-weight:600;
+      font-size:.95rem;
+    }
 
-header{
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(135deg,#09152e,#040816);
-}
+    nav a:hover{color:#fff}
 
-h1{
-font-size:44px;
-margin:10px 0;
-}
+    header{
+      padding:72px 20px 52px;
+      text-align:center;
+      background:linear-gradient(135deg,#09152e,#040816);
+      border-bottom:1px solid var(--line);
+    }
 
-h2{
-color:#70c7ff;
-}
+    .hero-wrap{
+      max-width:1200px;
+      margin:auto;
+    }
 
-section{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
-}
+    h1{
+      font-size:clamp(2.2rem,5vw,4rem);
+      margin:8px 0 10px;
+      line-height:1.1;
+    }
 
-.card{
-background:#0f1931;
-border-radius:18px;
-padding:25px;
-margin:15px 0;
-border:1px solid rgba(255,255,255,.08);
-}
+    h2{
+      color:var(--accent);
+      margin:0 0 16px;
+      font-size:clamp(1.5rem,3vw,2rem);
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
+    h3{
+      margin-top:0;
+      margin-bottom:10px;
+      font-size:1.12rem;
+    }
 
-img{
-width:100%;
-border-radius:10px;
-}
+    p{
+      color:var(--muted);
+      margin:0 0 12px;
+    }
 
-a.btn{
-background:#55e0ff;
-border:none;
-padding:12px 18px;
-border-radius:8px;
-color:#08111f;
-font-weight:600;
-text-decoration:none;
-}
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:56px 20px;
+    }
 
-footer{
-text-align:center;
-padding:40px;
-color:#9eb2cf;
-}
+    .intro{
+      max-width:850px;
+      margin:0 auto 22px;
+    }
 
-</style>
+    .hero-image{
+      max-width:720px;
+      width:100%;
+      border-radius:18px;
+      border:1px solid var(--line);
+      margin:22px auto 0;
+      display:block;
+      box-shadow:0 20px 45px rgba(0,0,0,.28);
+    }
 
+    .btn-row{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--accent-2);
+      color:#08111f;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .btn.secondary{
+      background:#132445;
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .stat{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.35rem;
+      color:#fff;
+      margin-bottom:6px;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:20px;
+    }
+
+    .timeline{
+      display:grid;
+      gap:18px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+    }
+
+    .gallery-card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+    }
+
+    .gallery-card img{
+      width:100%;
+      border-radius:12px;
+      display:block;
+    }
+
+    .caption{
+      margin-top:10px;
+      font-size:.94rem;
+      color:var(--muted);
+    }
+
+    ul{
+      margin:10px 0 0 18px;
+      color:var(--muted);
+    }
+
+    li{margin-bottom:8px}
+
+    .section-title{
+      margin-bottom:18px;
+    }
+
+    .subsection{
+      margin-top:34px;
+    }
+
+    a{
+      color:var(--accent);
+    }
+
+    footer{
+      text-align:center;
+      padding:34px 20px 50px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:20px;
+    }
+
+    @media (max-width:700px){
+      nav a{
+        display:inline-block;
+        margin:6px 10px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#visuals">Mars Visuals</a>
+    <a href="#simulations">Simulations</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<h1>Umesh Chandra Jangam</h1>
+  <header>
+    <div class="hero-wrap">
+      <div style="color:#70c7ff;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Umesh Research Portfolio</div>
+      <h1>Umesh Chandra Jangam</h1>
+      <h2>Civil & Structural Engineer • Mars Habitat Research</h2>
+      <p class="intro">
+        Designing resilient structures for Earth, extreme environments, and future Mars habitats.
+        My work combines structural engineering, seismic analysis, geotechnical simulation,
+        and conceptual infrastructure for extraterrestrial settlement.
+      </p>
 
-<h2>Civil & Structural Engineer | Mars Habitat Research</h2>
+      <div class="btn-row">
+        <a class="btn" href="#research">Explore Research</a>
+        <a class="btn secondary" href="JANGAM-UMESH-CHANDRA_RESUME.pdf" download>Download Resume</a>
+        <a class="btn secondary" href="mailto:jangam.umeshchandra@gmail.com">Contact</a>
+      </div>
 
-<p>Structural engineering • Geotechnical simulation • Mars habitat systems</p>
+      <img class="hero-image" src="Environment on Mars.jpg" alt="Mars environment research visual" />
 
-<a class="btn" href="JANGAM-UMESH-CHANDRA_RESUME.pdf">Download Resume</a>
+      <div class="stats">
+        <div class="stat">
+          <strong>MSc</strong>
+          <span>Teesside University, Merit</span>
+        </div>
+        <div class="stat">
+          <strong>B.Tech</strong>
+          <span>GITAM, Distinction</span>
+        </div>
+        <div class="stat">
+          <strong>ETABS / Revit</strong>
+          <span>Structural + BIM workflow</span>
+        </div>
+        <div class="stat">
+          <strong>3 Research Themes</strong>
+          <span>MOOSE, MPM, Mars systems</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-</header>
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p>
+          I completed an MSc in Civil and Structural Engineering at Teesside University,
+          where my thesis compared residential building design in high seismic zones across India and Italy
+          using software-based structural modeling and code comparison.
+        </p>
+        <p>
+          I also hold a B.Tech in Civil Engineering from GITAM, where I studied the behavior of a G+6
+          reinforced concrete building under different Indian seismic zones.
+        </p>
+        <p>
+          My current role in construction engineering strengthens my practical understanding of site inspection,
+          compliance, structural integrity review, and quality assurance.
+        </p>
+      </div>
 
+      <div class="card">
+        <h3>Core Skills</h3>
+        <p>AutoCAD 2D/3D • ETABS • STAAD.Pro • Revit • SketchUp • BIM</p>
+        <p>Structural Analysis • Construction Management • Problem Solving • Communication</p>
+        <p>English • Hindi • Telugu</p>
 
-<section>
+        <h3 style="margin-top:18px;">Academic & Technical Interests</h3>
+        <p>Engineering Project Management • Mechanics of Materials • 3D CAD Applications</p>
+        <p>Construction Cost Control • BIM for Engineers • Geotechnology • Mars Systems</p>
+      </div>
+    </div>
+  </section>
 
-<h2>About Me</h2>
+  <section id="experience">
+    <h2 class="section-title">Experience & Education</h2>
+    <div class="timeline">
+      <div class="card">
+        <h3>Dec 2023 – Present</h3>
+        <p><strong>Civil Engineer • Cloudswood Constructions Pvt Ltd</strong></p>
+        <p>
+          Evaluating and interpreting testing and inspection data, overseeing construction sites
+          to ensure code compliance, and conducting site visits to maintain safety and quality requirements.
+        </p>
+      </div>
 
-<div class="card">
+      <div class="card">
+        <h3>Sept 2021 – June 2023</h3>
+        <p><strong>MSc Civil and Structural Engineering • Teesside University</strong></p>
+        <p>
+          Graduated with Merit. Thesis focused on comparing residential building design
+          in seismic regions of India and Italy, including member force review and code-based design comparison.
+        </p>
+      </div>
 
-<p>
-Civil engineer with MSc in Civil & Structural Engineering from Teesside University.
-Research interests include seismic design, geotechnology, multiphysics modeling,
-and future infrastructure for Mars exploration.
-</p>
+      <div class="card">
+        <h3>June 2017 – June 2021</h3>
+        <p><strong>B.Tech Civil Engineering • GITAM</strong></p>
+        <p>
+          Graduated with Distinction. Undergraduate project investigated steel percentage, shear force,
+          bending moment, and deflection of a G+6 RC framed structure across seismic zones using STAAD.Pro.
+        </p>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <section id="research">
+    <h2 class="section-title">Research Focus</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Mars Habitat Research</h3>
+        <p>
+          Concept development around Mars settlement challenges including low oxygen,
+          radiation, gravity, logistics, dust, regolith, and long-term sustainability.
+        </p>
+        <ul>
+          <li>Underground or regolith-shielded dome habitat strategies</li>
+          <li>Environmental and soil analysis before foundation decisions</li>
+          <li>Power, life support, waste management, and robotic construction planning</li>
+        </ul>
+      </div>
 
-</section>
+      <div class="card">
+        <h3>ISRU Systems</h3>
+        <p>
+          Research interest in oxygen, water, methane, and construction materials produced
+          from Martian atmosphere and regolith.
+        </p>
+        <ul>
+          <li>CO₂-to-O₂ conversion concepts</li>
+          <li>Water ice and regolith-based construction pathways</li>
+          <li>Supply chain reduction through local resource utilization</li>
+        </ul>
+      </div>
 
+      <div class="card">
+        <h3>Geotechnical Simulation</h3>
+        <p>
+          Emerging themes include MOOSE-based geotechnical simulation,
+          two-phase contact algorithms in MPM for saturated soil-structure interaction,
+          and sustainable infrastructure modeling.
+        </p>
+        <ul>
+          <li>Multiphysics modeling workflows</li>
+          <li>Hydro-mechanical interaction simulation</li>
+          <li>Parallel computing in engineering analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section>
+  <section id="visuals">
+    <h2 class="section-title">Mars Research Visuals</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="Environment on Mars.jpg" alt="Environment on Mars visual" />
+        <div class="caption">Hero-style Mars environment artwork for the research landing section.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="geology of mars.jpg" alt="Geology of Mars infographic" />
+        <div class="caption">Geology of Mars infographic highlighting terrain and planetary characteristics.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="IMG_1172.jpeg" alt="The Red Planet poster" />
+        <div class="caption">The Red Planet visual poster for the featured media section.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="IMG_1173.jpeg" alt="Mars as second home infographic" />
+        <div class="caption">Mars habitability infographic aligned with settlement research themes.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="IMG_1174.jpeg" alt="Mars successful rovers infographic" />
+        <div class="caption">Mars rover milestone collage showing key surface exploration missions.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="Mars Moons.jpg" alt="Mars moons visual" />
+        <div class="caption">Phobos and Deimos visual for planetary systems context.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="planetary data.jpg" alt="Planetary data infographic" />
+        <div class="caption">Key Mars planetary data including physical and environmental parameters.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="Roadmap.jpg" alt="Curiosity rover roadmap timeline" />
+        <div class="caption">Curiosity rover roadmap timeline presenting exploration milestones.</div>
+      </div>
+    </div>
 
-<h2>Research Areas</h2>
+    <div class="subsection">
+      <h2>Phobos Research Images</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card"><img src="Phobos1.jpg" alt="Phobos image 1" /></div>
+        <div class="gallery-card"><img src="Phobos2.jpg" alt="Phobos image 2" /></div>
+        <div class="gallery-card"><img src="Phobos3.jpg" alt="Phobos image 3" /></div>
+        <div class="gallery-card"><img src="Phobos4.jpg" alt="Phobos image 4" /></div>
+        <div class="gallery-card"><img src="Phobos5.jpg" alt="Phobos image 5" /></div>
+        <div class="gallery-card"><img src="Phobos6.jpg" alt="Phobos image 6" /></div>
+        <div class="gallery-card"><img src="Phobos7.jpg" alt="Phobos image 7" /></div>
+      </div>
+    </div>
 
-<div class="grid">
+    <div class="subsection">
+      <h2>Deimos Research Images</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card"><img src="Deimos 1.jpg" alt="Deimos image 1" /></div>
+        <div class="gallery-card"><img src="Deimos 2.jpg" alt="Deimos image 2" /></div>
+        <div class="gallery-card"><img src="Deimos 3.jpg" alt="Deimos image 3" /></div>
+        <div class="gallery-card"><img src="Deimos 4.jpg" alt="Deimos image 4" /></div>
+        <div class="gallery-card"><img src="Deimos 5.jpg" alt="Deimos image 5" /></div>
+      </div>
+    </div>
 
-<div class="card">
-<h3>Mars Habitat Engineering</h3>
-<p>Conceptual research on sustainable habitats near Olympus Mons using regolith shielding and ISRU systems.</p>
-</div>
+    <div class="subsection">
+      <h2>Mars Environment Studies</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card"><img src="Sea 1.jpg" alt="Mars environment image 1" /></div>
+        <div class="gallery-card"><img src="Sea 2.jpg" alt="Mars environment image 2" /></div>
+        <div class="gallery-card"><img src="Sea 3.jpg" alt="Mars environment image 3" /></div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>ISRU Resource Systems</h3>
-<p>Extraction of oxygen, methane fuel, and water from Martian atmosphere and regolith.</p>
-</div>
+  <section id="simulations">
+    <h2 class="section-title">Engineering Simulations</h2>
+    <div class="card">
+      <h3>Simulation Themes</h3>
+      <ul>
+        <li>Seismic design comparison using code-based structural modeling</li>
+        <li>G+6 RC building response variation across earthquake zones</li>
+        <li>MOOSE framework workflows for advanced geotechnical problems</li>
+        <li>Two-phase contact MPM for saturated soil-structure interaction</li>
+        <li>Mars habitat stability under low gravity and regolith conditions</li>
+      </ul>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Geotechnical Simulation</h3>
-<p>Multiphysics modeling and soil-structure interaction simulation using advanced frameworks.</p>
-</div>
+  <section id="publications">
+    <h2 class="section-title">Research Publications</h2>
 
-</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Mars Habitat Systems near Olympus Mons</h3>
+        <p>Conceptual research on sustainable human settlement infrastructure on Mars.</p>
+        <a class="btn" href="mars_habitat_research.pdf">Read Paper</a>
+      </div>
 
-</section>
+      <div class="card">
+        <h3>Geotechnical Simulation using MOOSE Framework</h3>
+        <p>Multiphysics modelling for soil-structure interaction and geotechnical analysis.</p>
+        <a class="btn" href="geotechnical_simulation_moose.pdf">Read Paper</a>
+      </div>
 
+      <div class="card">
+        <h3>Seismic Design Comparison Study</h3>
+        <p>Comparative study of structural design approaches in seismic regions.</p>
+        <a class="btn" href="seismic_design_comparison.pdf">Read Paper</a>
+      </div>
+    </div>
+  </section>
 
-<section>
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:jangam.umeshchandra@gmail.com">jangam.umeshchandra@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919100338382">+91 9100338382</a></p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/umesh-chandra-jangam-348155201/" target="_blank" rel="noreferrer">
+          linkedin.com/in/umesh-chandra-jangam-348155201
+        </a>
+      </p>
+    </div>
+  </section>
 
-<h2>Mars Research Gallery</h2>
-
-<div class="grid">
-
-<div class="card"><img src="Phobos1.jpg"></div>
-<div class="card"><img src="Phobos2.jpg"></div>
-<div class="card"><img src="Phobos3.jpg"></div>
-<div class="card"><img src="Phobos4.jpg"></div>
-<div class="card"><img src="Phobos5.jpg"></div>
-<div class="card"><img src="Phobos6.jpg"></div>
-<div class="card"><img src="Phobos7.jpg"></div>
-
-</div>
-
-<h2>Deimos Moon Research</h2>
-
-<div class="grid">
-
-<div class="card"><img src="Deimos 1.jpg"></div>
-<div class="card"><img src="Deimos 2.jpg"></div>
-<div class="card"><img src="Deimos 3.jpg"></div>
-<div class="card"><img src="Deimos 4.jpg"></div>
-<div class="card"><img src="Deimos 5.jpg"></div>
-
-</div>
-
-<h2>Mars Environment Research</h2>
-
-<div class="grid">
-
-<div class="card"><img src="Sea 1.jpg"></div>
-<div class="card"><img src="Sea 2.jpg"></div>
-<div class="card"><img src="Sea 3.jpg"></div>
-
-<div class="card"><img src="Environment on Mars.jpg"></div>
-<div class="card"><img src="geology of mars.jpg"></div>
-<div class="card"><img src="IMG_1172.jpeg"></div>
-<div class="card"><img src="IMG_1173.jpeg"></div>
-<div class="card"><img src="IMG_1174.jpeg"></div>
-<div class="card"><img src="Mars Moons.jpg"></div>
-<div class="card"><img src="planetary data.jpg"></div>
-<div class="card"><img src="Roadmap.jpg"></div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2>Contact</h2>
-
-<div class="card">
-
-<p>Email: jangam.umeshchandra@gmail.com</p>
-
-<p>Phone: +91 9100338382</p>
-
-<p>LinkedIn:
-<a href="https://www.linkedin.com/in/umesh-chandra-jangam-348155201/" target="_blank">
-linkedin.com/in/umesh-chandra-jangam
-</a>
-</p>
-
-</div>
-
-</section>
-
-
-<footer>
-
-© 2026 Umesh Chandra Jangam • Civil Engineering • Mars Habitat Research
-
-</footer>
+  <footer>
+    © 2026 Umesh Chandra Jangam • Civil Engineering • Structural Design • Mars Habitat Research
+  </footer>
 
 </body>
 </html>
