@@ -4,239 +4,298 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="vgf9gc_EUml36Sk_WX7mDDirrN53E7NBX8C-hNFmnlM" />
-  <meta name="description" content="Umesh Chandra Jangam is a civil and structural engineer researching Mars habitat systems, geotechnical simulation, and seismic structural design." />
+  <meta
+    name="description"
+    content="Umesh Chandra Jangam is a civil and structural engineer researching Mars habitat systems, geotechnical simulation, and seismic structural design."
+  />
 
   <title>Umesh Chandra Jangam | Civil Engineer | Mars Habitat Research</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    :root{
-      --bg:#040816;
-      --panel:#0f1931;
-      --panel-2:#09152e;
-      --text:#edf4ff;
-      --muted:#9eb2cf;
-      --accent:#70c7ff;
-      --accent-2:#55e0ff;
-      --line:rgba(255,255,255,.08);
+    :root {
+      --bg: #040816;
+      --bg2: #08152e;
+      --panel: #0f1931;
+      --panel2: #132445;
+      --text: #edf4ff;
+      --muted: #9eb2cf;
+      --accent: #70c7ff;
+      --accent2: #55e0ff;
+      --line: rgba(255, 255, 255, 0.08);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:linear-gradient(180deg,#040816 0%,#061024 100%);
-      color:var(--text);
-      line-height:1.6;
+    * {
+      box-sizing: border-box;
     }
 
-    nav{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(4,8,22,.92);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-      padding:14px 20px;
-      text-align:center;
+    html {
+      scroll-behavior: smooth;
     }
 
-    nav a{
-      color:var(--muted);
-      text-decoration:none;
-      margin:0 14px;
-      font-weight:600;
-      font-size:.95rem;
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #061024 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    nav a:hover{color:#fff}
-
-    header{
-      padding:72px 20px 52px;
-      text-align:center;
-      background:linear-gradient(135deg,#09152e,#040816);
-      border-bottom:1px solid var(--line);
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(4, 8, 22, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      text-align: center;
     }
 
-    .hero-wrap{
-      max-width:1200px;
-      margin:auto;
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 600;
+      font-size: 0.95rem;
     }
 
-    h1{
-      font-size:clamp(2.2rem,5vw,4rem);
-      margin:8px 0 10px;
-      line-height:1.1;
+    nav a:hover {
+      color: #fff;
     }
 
-    h2{
-      color:var(--accent);
-      margin:0 0 16px;
-      font-size:clamp(1.5rem,3vw,2rem);
+    .hero {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--bg2), #020611);
+      border-bottom: 1px solid var(--line);
     }
 
-    h3{
-      margin-top:0;
-      margin-bottom:10px;
-      font-size:1.12rem;
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.15fr 360px;
+      gap: 40px;
+      align-items: center;
     }
 
-    p{
-      color:var(--muted);
-      margin:0 0 12px;
+    .hero-text .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
     }
 
-    section{
-      max-width:1200px;
-      margin:auto;
-      padding:56px 20px;
+    .hero-text h1 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1.08;
+      margin: 0 0 10px;
     }
 
-    .intro{
-      max-width:850px;
-      margin:0 auto 22px;
+    .hero-text h2 {
+      margin: 0 0 16px;
+      color: var(--accent2);
+      font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+      font-weight: 700;
     }
 
-    .hero-image{
-      max-width:720px;
-      width:100%;
-      border-radius:18px;
-      border:1px solid var(--line);
-      margin:22px auto 0;
-      display:block;
-      box-shadow:0 20px 45px rgba(0,0,0,.28);
+    .hero-text p {
+      color: var(--muted);
+      margin: 0 0 20px;
+      font-size: 1rem;
+      max-width: 700px;
     }
 
-    .btn-row{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:18px;
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
     }
 
-    .btn{
-      display:inline-block;
-      background:var(--accent-2);
-      color:#08111f;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:700;
-      text-decoration:none;
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .btn.secondary{
-      background:#132445;
-      color:var(--text);
-      border:1px solid var(--line);
+    .hero-image img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--accent2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      background: #0c1326;
     }
 
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:16px;
-      margin-top:28px;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
     }
 
-    .stat{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:18px;
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
     }
 
-    .stat strong{
-      display:block;
-      font-size:1.35rem;
-      color:#fff;
-      margin-bottom:6px;
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 6px;
     }
 
-    .card{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 56px 20px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
+    .section-title {
+      color: var(--accent);
+      margin: 0 0 18px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
     }
 
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:20px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
 
-    .timeline{
-      display:grid;
-      gap:18px;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
     }
 
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:18px;
+    .timeline {
+      display: grid;
+      gap: 18px;
     }
 
-    .gallery-card{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px;
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
     }
 
-    .gallery-card img{
-      width:100%;
-      border-radius:12px;
-      display:block;
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.12rem;
     }
 
-    .caption{
-      margin-top:10px;
-      font-size:.94rem;
-      color:var(--muted);
+    .card p {
+      margin: 0 0 12px;
+      color: var(--muted);
     }
 
-    ul{
-      margin:10px 0 0 18px;
-      color:var(--muted);
+    ul {
+      margin: 10px 0 0 18px;
+      color: var(--muted);
     }
 
-    li{margin-bottom:8px}
-
-    .section-title{
-      margin-bottom:18px;
+    li {
+      margin-bottom: 8px;
     }
 
-    .subsection{
-      margin-top:34px;
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
     }
 
-    a{
-      color:var(--accent);
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
     }
 
-    footer{
-      text-align:center;
-      padding:34px 20px 50px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-      margin-top:20px;
+    .gallery-card img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
     }
 
-    @media (max-width:700px){
-      nav a{
-        display:inline-block;
-        margin:6px 10px;
+    .caption {
+      margin-top: 10px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .subsection {
+      margin-top: 34px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent2);
+      color: #08111f;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .btn.secondary {
+      background: var(--panel2);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px 20px 50px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav a {
+        display: inline-block;
+        margin: 6px 10px;
+      }
+
+      .hero-image img {
+        width: 220px;
+        height: 220px;
       }
     }
   </style>
@@ -249,46 +308,49 @@
     <a href="#research">Research</a>
     <a href="#visuals">Mars Visuals</a>
     <a href="#simulations">Simulations</a>
-    <a href="#publications">Publications</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <header>
-    <div class="hero-wrap">
-      <div style="color:#70c7ff;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Umesh Research Portfolio</div>
-      <h1>Umesh Chandra Jangam</h1>
-      <h2>Civil & Structural Engineer • Mars Habitat Research</h2>
-      <p class="intro">
-        Designing resilient structures for Earth, extreme environments, and future Mars habitats.
-        My work combines structural engineering, seismic analysis, geotechnical simulation,
-        and conceptual infrastructure for extraterrestrial settlement.
-      </p>
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="eyebrow">Umesh Research Portfolio</div>
+        <h1>Umesh Chandra Jangam</h1>
+        <h2>Civil & Structural Engineer • Mars Habitat Research</h2>
+        <p>
+          Designing resilient structures for Earth, extreme environments, and future Mars habitats.
+          My work combines structural engineering, seismic analysis, geotechnical simulation,
+          and conceptual infrastructure for extraterrestrial settlement.
+        </p>
 
-      <div class="btn-row">
-        <a class="btn" href="#research">Explore Research</a>
-        <a class="btn secondary" href="JANGAM-UMESH-CHANDRA_RESUME.pdf" download>Download Resume</a>
-        <a class="btn secondary" href="mailto:jangam.umeshchandra@gmail.com">Contact</a>
+        <div class="hero-buttons">
+          <a class="btn" href="#research">Explore Research</a>
+          <a class="btn secondary" href="JANGAM-UMESH-CHANDRA_RESUME.pdf" download>Download Resume</a>
+          <a class="btn secondary" href="mailto:jangam.umeshchandra@gmail.com">Contact</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>MSc</strong>
+            <span>Teesside University, Merit</span>
+          </div>
+          <div class="stat">
+            <strong>B.Tech</strong>
+            <span>GITAM, Distinction</span>
+          </div>
+          <div class="stat">
+            <strong>ETABS / Revit</strong>
+            <span>Structural + BIM workflow</span>
+          </div>
+          <div class="stat">
+            <strong>3 Research Themes</strong>
+            <span>MOOSE, MPM, Mars systems</span>
+          </div>
+        </div>
       </div>
 
-      <img class="hero-image" src="Environment on Mars.jpg" alt="Mars environment research visual" />
-
-      <div class="stats">
-        <div class="stat">
-          <strong>MSc</strong>
-          <span>Teesside University, Merit</span>
-        </div>
-        <div class="stat">
-          <strong>B.Tech</strong>
-          <span>GITAM, Distinction</span>
-        </div>
-        <div class="stat">
-          <strong>ETABS / Revit</strong>
-          <span>Structural + BIM workflow</span>
-        </div>
-        <div class="stat">
-          <strong>3 Research Themes</strong>
-          <span>MOOSE, MPM, Mars systems</span>
-        </div>
+      <div class="hero-image">
+        <img src="profile.jpg" alt="Umesh Chandra Jangam profile photo" />
       </div>
     </div>
   </header>
@@ -329,7 +391,7 @@
     <h2 class="section-title">Experience & Education</h2>
     <div class="timeline">
       <div class="card">
-        <h3>Dec 2023 – Jun 2025</h3>
+        <h3>Dec 2023 – Present</h3>
         <p><strong>Civil Engineer • Cloudswood Constructions Pvt Ltd</strong></p>
         <p>
           Evaluating and interpreting testing and inspection data, overseeing construction sites
@@ -487,30 +549,6 @@
     </div>
   </section>
 
-  <section id="publications">
-    <h2 class="section-title">Research Publications</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Mars Habitat Systems near Olympus Mons</h3>
-        <p>Conceptual research on sustainable human settlement infrastructure on Mars.</p>
-        <a class="btn" href="mars_habitat_research.pdf">Read Paper</a>
-      </div>
-
-      <div class="card">
-        <h3>Geotechnical Simulation using MOOSE Framework</h3>
-        <p>Multiphysics modelling for soil-structure interaction and geotechnical analysis.</p>
-        <a class="btn" href="geotechnical_simulation_moose.pdf">Read Paper</a>
-      </div>
-
-      <div class="card">
-        <h3>Seismic Design Comparison Study</h3>
-        <p>Comparative study of structural design approaches in seismic regions.</p>
-        <a class="btn" href="seismic_design_comparison.pdf">Read Paper</a>
-      </div>
-    </div>
-  </section>
-
   <section id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="card">
@@ -531,5 +569,3 @@
 
 </body>
 </html>
-
-
