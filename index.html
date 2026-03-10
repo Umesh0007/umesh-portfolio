@@ -1,555 +1,1104 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="google-site-verification" content="vgf9gc_EUml36Sk_WX7mDDirrN53E7NBX8C-hNFmnlM">
-
-<title>Umesh Chandra Jangam | Civil Engineer | Mars Habitat Research</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* ---------- GLOBAL ---------- */
-
-*{box-sizing:border-box}
-
-body{
-font-family:Inter,system-ui;
-margin:0;
-color:#edf4ff;
-overflow-x:hidden;
-
-background:
-radial-gradient(circle at 20% 20%, rgba(85,224,255,.1), transparent 25%),
-radial-gradient(circle at 80% 10%, rgba(157,135,255,.12), transparent 25%),
-radial-gradient(circle at 70% 80%, rgba(255,200,107,.1), transparent 30%),
-linear-gradient(180deg,#020611 0%,#050b1b 100%);
-}
-
-/* ---------- MOVING STARS ---------- */
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-
-background-image:radial-gradient(white 1px,transparent 1px);
-background-size:60px 60px;
-
-opacity:.25;
-
-animation:starsMove 40s linear infinite;
-
-pointer-events:none;
-}
-
-@keyframes starsMove{
-0%{transform:translateY(0)}
-100%{transform:translateY(-200px)}
-}
-
-/* ---------- NAV ---------- */
-
-nav{
-background:#020a1f;
-padding:15px;
-text-align:center;
-border-bottom:1px solid rgba(255,255,255,.08);
-position:sticky;
-top:0;
-z-index:100;
-}
-
-nav a{
-color:#9eb2cf;
-margin:0 15px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-nav a:hover{
-color:#55e0ff;
-}
-
-/* ---------- HERO ---------- */
-
-.hero{
-padding:80px 20px;
-background:linear-gradient(135deg,#08152e,#020611);
-position:relative;
-}
-
-.hero-container{
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 350px;
-gap:40px;
-align-items:center;
-}
-
-.hero-text h1{
-font-size:48px;
-margin-bottom:10px;
-
-animation:glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow{
-from{text-shadow:0 0 5px #55e0ff}
-to{text-shadow:0 0 20px #55e0ff}
-}
-
-.hero-text h2{
-color:#55e0ff;
-margin-bottom:15px;
-}
-
-.hero-text p{
-color:#9eb2cf;
-}
-
-.hero-buttons{
-margin-top:25px;
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn{
-background:#55e0ff;
-border:none;
-padding:12px 18px;
-border-radius:10px;
-color:#08111f;
-font-weight:600;
-text-decoration:none;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(85,224,255,.4);
-}
-
-.btn.secondary{
-background:#0f1931;
-color:#edf4ff;
-border:1px solid rgba(255,255,255,.1);
-}
-
-/* ---------- PROFILE IMAGE ---------- */
-
-.hero-image{
-display:flex;
-justify-content:center;
-position:relative;
-}
-
-.hero-image img{
-width:320px;
-height:320px;
-border-radius:50%;
-object-fit:cover;
-object-position:50% 20%;
-border:4px solid #55e0ff;
-box-shadow:0 20px 50px rgba(0,0,0,.5);
-}
-
-/* ---------- FLOATING MARS ---------- */
-
-.mars{
-position:absolute;
-right:-30px;
-top:-30px;
-
-width:120px;
-height:120px;
-
-border-radius:50%;
-
-background:
-radial-gradient(circle at 40% 30%,#ffb27a,#e36d3b 40%,#8f2f15 70%);
-
-box-shadow:0 0 25px rgba(255,100,50,.7);
-
-animation:floatMars 6s ease-in-out infinite;
-}
-
-@keyframes floatMars{
-0%{transform:translateY(0)}
-50%{transform:translateY(-20px)}
-100%{transform:translateY(0)}
-}
-
-/* ---------- STATS ---------- */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.stat{
-background:#0f1931;
-padding:20px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,.08);
-
-transition:.3s;
-}
-
-.stat:hover{
-transform:translateY(-6px);
-}
-
-/* ---------- SECTIONS ---------- */
-
-section{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
-}
-
-.card{
-background:#0f1931;
-border-radius:18px;
-padding:25px;
-margin:15px 0;
-border:1px solid rgba(255,255,255,.08);
-
-opacity:0;
-transform:translateY(30px);
-transition:all .6s;
-}
-
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.card:hover{
-transform:translateY(-6px);
-}
-
-/* ---------- GRID ---------- */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-/* ---------- GALLERY ---------- */
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-.gallery-card{
-background:#0f1931;
-padding:15px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,.08);
-transition:.3s;
-}
-
-.gallery-card:hover{
-transform:scale(1.05);
-}
-
-.gallery-card img{
-width:100%;
-border-radius:10px;
-display:block;
-}
-
-/* ---------- FOOTER ---------- */
-
-footer{
-text-align:center;
-padding:40px;
-color:#9eb2cf;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width:900px){
-
-.hero-container{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-.stats{
-grid-template-columns:1fr 1fr;
-}
-
-.mars{display:none;}
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="vgf9gc_EUml36Sk_WX7mDDirrN53E7NBX8C-hNFmnlM" />
+  <title>Umesh Chandra Jangam | Civil Engineer | Mars Habitat Research</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg-dark: #030712;
+      --bg-deep: #081326;
+      --card: rgba(13, 23, 44, 0.88);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #edf4ff;
+      --muted: #9fb3d1;
+      --accent: #55e0ff;
+      --accent-2: #ff8b4d;
+      --accent-3: #a98bff;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(85, 224, 255, 0.12), transparent 22%),
+        radial-gradient(circle at 80% 12%, rgba(169, 139, 255, 0.12), transparent 24%),
+        radial-gradient(circle at 70% 80%, rgba(255, 139, 77, 0.12), transparent 26%),
+        linear-gradient(180deg, #020611 0%, #06101f 55%, #030712 100%);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1.6px);
+      background-size: 70px 70px;
+      opacity: 0.28;
+      animation: starsDrift 36s linear infinite;
+    }
+
+    body::after {
+      background-image:
+        radial-gradient(circle, rgba(85,224,255,0.9) 1px, transparent 1.8px);
+      background-size: 120px 120px;
+      opacity: 0.14;
+      animation: starsDriftReverse 52s linear infinite;
+    }
+
+    @keyframes starsDrift {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-60px, -140px, 0); }
+    }
+
+    @keyframes starsDriftReverse {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(40px, 120px, 0); }
+    }
+
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-glow span {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.22;
+      animation: floatGlow 18s ease-in-out infinite;
+    }
+
+    .bg-glow span:nth-child(1) {
+      width: 260px;
+      height: 260px;
+      left: -40px;
+      top: 100px;
+      background: rgba(85, 224, 255, 0.28);
+    }
+
+    .bg-glow span:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      right: -60px;
+      top: 40px;
+      background: rgba(169, 139, 255, 0.22);
+      animation-delay: 3s;
+    }
+
+    .bg-glow span:nth-child(3) {
+      width: 320px;
+      height: 320px;
+      left: 50%;
+      bottom: -120px;
+      transform: translateX(-50%);
+      background: rgba(255, 139, 77, 0.22);
+      animation-delay: 6s;
+    }
+
+    @keyframes floatGlow {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-18px) translateX(10px); }
+    }
+
+    .shooting-stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .shooting-star {
+      position: absolute;
+      width: 2px;
+      height: 110px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);
+      transform: rotate(45deg);
+      opacity: 0;
+      animation: shoot 7s linear infinite;
+    }
+
+    .shooting-star:nth-child(1) {
+      top: 8%;
+      left: 12%;
+      animation-delay: 0s;
+    }
+
+    .shooting-star:nth-child(2) {
+      top: 18%;
+      left: 78%;
+      animation-delay: 2s;
+    }
+
+    .shooting-star:nth-child(3) {
+      top: 40%;
+      left: 62%;
+      animation-delay: 4s;
+    }
+
+    .shooting-star:nth-child(4) {
+      top: 14%;
+      left: 48%;
+      animation-delay: 6s;
+    }
+
+    @keyframes shoot {
+      0% {
+        opacity: 0;
+        transform: translate(-120px, -120px) rotate(45deg);
+      }
+      8% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+        transform: translate(420px, 420px) rotate(45deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(420px, 420px) rotate(45deg);
+      }
+    }
+
+    nav,
+    header,
+    section,
+    footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(3, 9, 24, 0.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 20px 70px;
+      background:
+        linear-gradient(135deg, rgba(8, 21, 46, 0.88), rgba(2, 6, 17, 0.96));
+    }
+
+    .hero-container {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(85,224,255,0.1);
+      border: 1px solid rgba(85,224,255,0.22);
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero-text h1 {
+      margin: 0 0 14px;
+      font-size: 60px;
+      line-height: 1.02;
+      letter-spacing: -1px;
+      animation: fadeUp 1s ease 0.1s both, glowText 3.2s ease-in-out infinite alternate;
+    }
+
+    .hero-text h2 {
+      margin: 0 0 18px;
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 600;
+      animation: fadeUp 1s ease 0.2s both;
+    }
+
+    .hero-text p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 680px;
+      animation: fadeUp 1s ease 0.3s both;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 8px rgba(85,224,255,0.15); }
+      to { text-shadow: 0 0 28px rgba(85,224,255,0.34); }
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp 1s ease 0.4s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #55e0ff, #7cf2ff);
+      color: #08111f;
+      box-shadow: 0 14px 30px rgba(85,224,255,0.24);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(85,224,255,0.32);
+    }
+
+    .btn.secondary {
+      background: rgba(15, 25, 49, 0.86);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn.secondary:hover {
+      transform: translateY(-4px);
+      border-color: rgba(85,224,255,0.35);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+    }
+
+    .hero-side {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeInScale 1.1s ease 0.2s both;
+    }
+
+    .photo-ring {
+      position: relative;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      padding: 10px;
+      background:
+        linear-gradient(135deg, rgba(85,224,255,0.9), rgba(169,139,255,0.55), rgba(255,139,77,0.65));
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.08),
+        0 0 40px rgba(85,224,255,0.12),
+        0 25px 60px rgba(0,0,0,0.35);
+      animation: ringPulse 5s ease-in-out infinite;
+    }
+
+    @keyframes ringPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .hero-side img.profile-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 20%;
+      display: block;
+      border: 5px solid #081326;
+      background: #081326;
+    }
+
+    .mars-planet {
+      position: absolute;
+      top: -28px;
+      right: -18px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #ffba84 0%, #ef7d43 36%, #a64121 68%, #652415 100%);
+      box-shadow:
+        0 0 28px rgba(255, 120, 61, 0.55),
+        inset -18px -18px 30px rgba(67, 22, 10, 0.36);
+      animation: planetFloat 5.5s ease-in-out infinite;
+      z-index: 3;
+    }
+
+    .mars-planet::before,
+    .mars-planet::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.55;
+    }
+
+    .mars-planet::before {
+      width: 34px;
+      height: 22px;
+      top: 24px;
+      left: 24px;
+      background: rgba(115, 40, 18, 0.38);
+      transform: rotate(-18deg);
+    }
+
+    .mars-planet::after {
+      width: 28px;
+      height: 18px;
+      bottom: 28px;
+      right: 20px;
+      background: rgba(89, 25, 11, 0.34);
+      transform: rotate(22deg);
+    }
+
+    @keyframes planetFloat {
+      0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+      50% { transform: translateY(-18px) translateX(-8px) rotate(6deg); }
+    }
+
+    .hero-badges {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      animation: fadeUp 1s ease 0.5s both;
+    }
+
+    .badge {
+      background: rgba(15, 25, 49, 0.92);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      transition: 0.3s ease;
+    }
+
+    .badge:hover {
+      transform: translateY(-6px);
+      border-color: rgba(85,224,255,0.22);
+    }
+
+    .badge strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .badge p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 86px 20px;
+    }
+
+    .section-title {
+      font-size: 38px;
+      margin: 0 0 14px;
+    }
+
+    .section-subtitle {
+      margin: 0 0 34px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 760px;
+      font-size: 17px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(85,224,255,0.22);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.34);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .research-card h3,
+    .abstract-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .research-card p,
+    .abstract-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .research-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      font-size: 24px;
+      background: linear-gradient(135deg, rgba(85,224,255,0.18), rgba(169,139,255,0.15));
+      border: 1px solid rgba(85,224,255,0.18);
+    }
+
+    .about-card p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-card {
+      background: rgba(15, 25, 49, 0.95);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.35s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(85,224,255,0.22);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: 0.45s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 24px;
+      padding-left: 28px;
+      border-left: 2px solid rgba(85,224,255,0.38);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding: 20px 22px;
+      background: rgba(15, 25, 49, 0.92);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      transition: 0.35s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(85,224,255,0.22);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -39px;
+      top: 28px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(85,224,255,0.12);
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contact-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(8, 16, 35, 0.72);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.3s ease;
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-4px);
+      border-color: rgba(85,224,255,0.24);
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(85,224,255,0.16), rgba(169,139,255,0.14));
+      border: 1px solid rgba(85,224,255,0.16);
+      flex-shrink: 0;
+    }
+
+    footer {
+      padding: 34px 20px 48px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(3, 8, 20, 0.45);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.92);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text p {
+        margin-inline: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-badges {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-side {
+        order: -1;
+      }
+
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .mars-planet {
+        width: 100px;
+        height: 100px;
+        right: 5px;
+        top: -10px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-text h2 {
+        font-size: 20px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+      }
+
+      .photo-ring {
+        width: 290px;
+        height: 290px;
+      }
+
+      .hero-badges {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .gallery-card img {
+        height: 200px;
+      }
+
+      .nav-inner {
+        gap: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<nav>
-
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#visuals">Mars Visuals</a>
-<a href="#contact">Contact</a>
-
-</nav>
-
-<header class="hero">
-
-<div class="hero-container">
-
-<div class="hero-text">
-
-<h1>Umesh Chandra Jangam</h1>
-
-<h2>Civil & Structural Engineer • Mars Habitat Research</h2>
-
-<p>
-
-Designing resilient structures for Earth, extreme environments,
-and future Mars habitats.
-
-My work combines structural engineering, geotechnical simulation,
-and planetary infrastructure concepts.
-
-</p>
-
-<div class="hero-buttons">
-
-<a class="btn" href="#research">Explore Research</a>
-
-<a class="btn secondary" href="JANGAM-UMESH-CHANDRA_RESUME.pdf">
-Download Resume
-</a>
-
-<a class="btn secondary" href="mailto:jangam.umeshchandra@gmail.com">
-Contact
-</a>
-
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<strong>MSc</strong>
-<p>Teesside University</p>
-</div>
-
-<div class="stat">
-<strong>B.Tech</strong>
-<p>GITAM University</p>
-</div>
-
-<div class="stat">
-<strong>ETABS / Revit</strong>
-<p>Structural BIM</p>
-</div>
-
-<div class="stat">
-<strong>3 Research Themes</strong>
-<p>Mars Systems</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<div class="mars"></div>
-
-<img src="profile.jpg" alt="Umesh Chandra Jangam">
-
-</div>
-
-</div>
-
-</header>
-
-<section id="about">
-
-<h2>About Me</h2>
-
-<div class="card">
-
-<p>
-
-Civil engineer with MSc in Civil & Structural Engineering
-from Teesside University.
-
-My research interests include seismic design,
-geotechnology, multiphysics simulation,
-and future Mars infrastructure systems.
-
-</p>
-
-</div>
-
-</section>
-
-<section id="research">
-
-<h2>Research Areas</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Mars Habitat Engineering</h3>
-
-<p>
-
-Conceptual research on sustainable habitats
-near Olympus Mons using regolith shielding
-and ISRU resource systems.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>ISRU Systems</h3>
-
-<p>
-
-Extraction of oxygen, methane fuel,
-and water from Martian atmosphere
-and regolith.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Geotechnical Simulation</h3>
-
-<p>
-
-Multiphysics modeling for soil-structure interaction
-and advanced engineering simulation.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="visuals">
-
-<h2>Mars Research Gallery</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-card"><img src="Environment on Mars.jpg"></div>
-<div class="gallery-card"><img src="geology of mars.jpg"></div>
-<div class="gallery-card"><img src="IMG_1172.jpeg"></div>
-<div class="gallery-card"><img src="IMG_1173.jpeg"></div>
-<div class="gallery-card"><img src="IMG_1174.jpeg"></div>
-<div class="gallery-card"><img src="Mars Moons.jpg"></div>
-<div class="gallery-card"><img src="planetary data.jpg"></div>
-<div class="gallery-card"><img src="Roadmap .jpg"></div>
-  
-<div class="gallery-card reveal"><img src="Phobos1.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Phobos2.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Phobos3.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Phobos4.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Phobos5.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Phobos6.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Phobos7.jpg" alt=""></div>
-
-<div class="gallery-card reveal"><img src="Deimos 1.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Deimos 2.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Deimos 3.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Deimos 4.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Deimos 5.jpg" alt=""></div>
-
-<div class="gallery-card reveal"><img src="Sea 1.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Sea 2.jpg" alt=""></div>
-<div class="gallery-card reveal"><img src="Sea 3.jpg" alt=""></div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<div class="card">
-
-<p>Email: jangam.umeshchandra@gmail.com</p>
-
-<p>Phone: +91 9100338382</p>
-
-<p>LinkedIn: linkedin.com/in/umesh-chandra-jangam-348155201</p>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Umesh Chandra Jangam • Civil Engineering • Mars Research
-
-</footer>
-
-<script>
-
-/* SCROLL ANIMATION */
-
-const cards=document.querySelectorAll(".card");
-
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-});
-
-cards.forEach(card=>{
-
-observer.observe(card);
-
-});
-
-</script>
-
+  <div class="bg-glow">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="shooting-stars">
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#abstracts">Abstracts</a>
+      <a href="#visuals">Mars Visuals</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="eyebrow">Civil & Structural Engineering • Mars Habitat Concepts</div>
+
+        <h1>Umesh Chandra Jangam</h1>
+        <h2>Civil Engineer • Structural Design • Mars Habitat Research</h2>
+
+        <p>
+          I am a Civil and Structural Engineering graduate and PhD aspirant with research interests in advanced geotechnical simulation, structural resilience, and sustainable infrastructure for extreme environments. My academic background and research experience span soil–structure interaction, computational modeling, geotechnology, and Mars habitat concepts. I am particularly interested in applying engineering principles to the design of resilient systems for both terrestrial and extraterrestrial conditions. Through doctoral research, I aspire to contribute meaningful innovations in geotechnical engineering, simulation-driven design, and future habitat development for planetary exploration.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn primary" href="#research">Explore Research</a>
+          <a class="btn secondary" href="JANGAM-UMESH-CHANDRA_RESUME.pdf">Download Resume</a>
+          <a class="btn secondary" href="mailto:jangam.umeshchandra@gmail.com">Contact Me</a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <strong>MSc</strong>
+            <p>Teesside University</p>
+          </div>
+          <div class="badge">
+            <strong>B.Tech</strong>
+            <p>GITAM University</p>
+          </div>
+          <div class="badge">
+            <strong>ETABS / Revit</strong>
+            <p>Structural & BIM Skills</p>
+          </div>
+          <div class="badge">
+            <strong>Mars Research</strong>
+            <p>Habitats, ISRU, Simulation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="photo-ring">
+          <img class="profile-photo" src="profile.jpg" alt="Umesh Chandra Jangam profile photo" />
+        </div>
+        <div class="mars-planet"></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">
+      A civil and structural engineering professional focused on resilient design, advanced simulation,
+      and the future of infrastructure in extreme planetary environments.
+    </p>
+
+    <div class="card about-card reveal">
+      <p>
+        I am a Civil Engineer with an MSc in Civil & Structural Engineering from Teesside University and a B.Tech from GITAM University.
+        My interests include structural analysis, geotechnology, soil-structure interaction, seismic design, and multiphysics simulation.
+        I am especially interested in translating these engineering principles into future-ready Mars habitat systems, including regolith-based shielding,
+        habitat layout concepts, and in-situ resource utilization for long-duration planetary missions.
+      </p>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2 class="section-title">Research Areas</h2>
+    <p class="section-subtitle">
+      My portfolio focuses on engineering systems that connect structural resilience, planetary science,
+      and sustainable habitation concepts for Mars exploration.
+    </p>
+
+    <div class="grid-3">
+      <div class="card research-card reveal">
+        <div class="research-icon">🪐</div>
+        <h3>Mars Habitat Engineering</h3>
+        <p>
+          Conceptual research on sustainable habitat systems near Olympus Mons using protective regolith shielding,
+          modular design strategies, and structural concepts for hostile extraterrestrial environments.
+        </p>
+      </div>
+
+      <div class="card research-card reveal">
+        <div class="research-icon">⚗️</div>
+        <h3>ISRU Systems</h3>
+        <p>
+          Exploration of oxygen, water, and methane production from Martian atmosphere and regolith to support
+          long-duration human settlement and mission sustainability.
+        </p>
+      </div>
+
+      <div class="card research-card reveal">
+        <div class="research-icon">📐</div>
+        <h3>Geotechnical Simulation</h3>
+        <p>
+          Multiphysics and soil-structure interaction modeling for advanced engineering analysis,
+          with interest in structural foundations and subsurface behavior under extreme conditions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="abstracts">
+    <h2 class="section-title">Research Abstracts</h2>
+    <p class="section-subtitle">
+      Selected abstracts adapted from my papers in geotechnical simulation, sustainable civil engineering,
+      and Mars habitat research.
+    </p>
+
+    <div class="grid-2">
+      <div class="card abstract-card reveal">
+        <div class="research-icon">🧩</div>
+        <h3>Advanced Geotechnical Simulations Using the MOOSE Framework</h3>
+        <p>
+          This work explores the MOOSE framework for geotechnical simulations, focusing on transient and quasi-static analysis.
+          It covers model setup, strain and stress evaluation, boundary fixation, initial stress conditions, construction staging,
+          mesh handling, and advanced material behavior. The study emphasizes robust input management, unit consistency,
+          and integration with external libraries to improve efficiency and simulation accuracy in large-scale geotechnical design.
+        </p>
+      </div>
+
+      <div class="card abstract-card reveal">
+        <div class="research-icon">🌍</div>
+        <h3>Geotechnology Applications in Civil Engineering</h3>
+        <p>
+          This paper examines how geotechnology supports modern civil engineering through soil stabilization,
+          geospatial mapping, remote sensing, and GIS-assisted infrastructure planning. It highlights applications in
+          earthquake-resistant design, landslide assessment, foundation engineering, and sustainable development,
+          showing how digital tools can improve construction safety, efficiency, and environmentally responsible practice.
+        </p>
+      </div>
+
+      <div class="card abstract-card reveal">
+        <div class="research-icon">🚀</div>
+        <h3>Mars Habitat Research</h3>
+        <p>
+          This study reviews the major environmental and engineering challenges of creating habitable systems on Mars.
+          It addresses atmospheric composition, severe temperature variation, low pressure, reduced gravity, radiation exposure,
+          dust hazards, and the need for long-term sustainability. It also discusses possible solutions such as oxygen generation,
+          greenhouse-gas-based environmental modification, underground or shielded habitats, and use of Martian minerals and regolith.
+        </p>
+      </div>
+
+      <div class="card abstract-card reveal">
+        <div class="research-icon">🔬</div>
+        <h3>Revolutionizing Geotechnical Simulations</h3>
+        <p>
+          This paper introduces a two-phase contact algorithm within the Material Point Method for complex saturated soil-structure interaction.
+          The proposed framework addresses stability issues, pressure oscillations, and stiffness differences between soil and rigid materials.
+          By incorporating semi-implicit integration and improved contact handling, the method enables larger stable time steps
+          and more accurate simulation of hydro-mechanical interaction in geotechnical systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visuals">
+    <h2 class="section-title">Mars Research Gallery</h2>
+    <p class="section-subtitle">
+      Visual references supporting Mars environment studies, geology, planetary systems, and exploration roadmaps.
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-card reveal"><img src="Environment on Mars.jpg" alt="Environment on Mars"></div>
+      <div class="gallery-card reveal"><img src="geology of mars.jpg" alt="Geology of Mars"></div>
+      <div class="gallery-card reveal"><img src="IMG_1172.jpeg" alt="Mars research visual 1"></div>
+      <div class="gallery-card reveal"><img src="IMG_1173.jpeg" alt="Mars research visual 2"></div>
+      <div class="gallery-card reveal"><img src="IMG_1174.jpeg" alt="Mars research visual 3"></div>
+      <div class="gallery-card reveal"><img src="Mars Moons.jpg" alt="Mars moons"></div>
+      <div class="gallery-card reveal"><img src="planetary data.jpg" alt="Planetary data"></div>
+      <div class="gallery-card reveal"><img src="Roadmap .jpg" alt="Mars roadmap"></div>
+
+      <div class="gallery-card reveal"><img src="Phobos1.jpg" alt="Phobos image 1"></div>
+      <div class="gallery-card reveal"><img src="Phobos2.jpg" alt="Phobos image 2"></div>
+      <div class="gallery-card reveal"><img src="Phobos3.jpg" alt="Phobos image 3"></div>
+      <div class="gallery-card reveal"><img src="Phobos4.jpg" alt="Phobos image 4"></div>
+      <div class="gallery-card reveal"><img src="Phobos5.jpg" alt="Phobos image 5"></div>
+      <div class="gallery-card reveal"><img src="Phobos6.jpg" alt="Phobos image 6"></div>
+      <div class="gallery-card reveal"><img src="Phobos7.jpg" alt="Phobos image 7"></div>
+
+      <div class="gallery-card reveal"><img src="Deimos 1.jpg" alt="Deimos image 1"></div>
+      <div class="gallery-card reveal"><img src="Deimos 2.jpg" alt="Deimos image 2"></div>
+      <div class="gallery-card reveal"><img src="Deimos 3.jpg" alt="Deimos image 3"></div>
+      <div class="gallery-card reveal"><img src="Deimos 4.jpg" alt="Deimos image 4"></div>
+      <div class="gallery-card reveal"><img src="Deimos 5.jpg" alt="Deimos image 5"></div>
+
+      <div class="gallery-card reveal"><img src="Sea 1.jpg" alt="Sea image 1"></div>
+      <div class="gallery-card reveal"><img src="Sea 2.jpg" alt="Sea image 2"></div>
+      <div class="gallery-card reveal"><img src="Sea 3.jpg" alt="Sea image 3"></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2 class="section-title">Mars Exploration Roadmap</h2>
+    <p class="section-subtitle">
+      A conceptual timeline highlighting long-term Mars engineering and settlement milestones aligned with habitat and ISRU development.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <h3>2030</h3>
+        <p>Advanced robotic missions and orbital reconnaissance improve landing site analysis and resource mapping for future crews.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <h3>2035</h3>
+        <p>Robotic ISRU demonstration systems begin producing oxygen, extracting water, and testing methane generation on Mars.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <h3>2040</h3>
+        <p>Initial modular habitat systems with regolith shielding concepts are deployed for long-duration human exploration missions.</p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <h3>2045</h3>
+        <p>Semi-permanent research infrastructure supports engineering experiments, scientific operations, and sustained human presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">
+      Connect with me for research collaboration, engineering opportunities, and discussions related to structural systems or Mars habitat concepts.
+    </p>
+
+    <div class="card contact-card reveal">
+      <p>
+        I am open to academic, research, and engineering collaborations related to structural design,
+        geotechnical analysis, and future planetary infrastructure systems.
+      </p>
+
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:jangam.umeshchandra@gmail.com">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <strong>Email</strong><br>
+            jangam.umeshchandra@gmail.com
+          </div>
+        </a>
+
+        <a class="contact-link" href="tel:+919100338382">
+          <div class="contact-icon">📞</div>
+          <div>
+            <strong>Phone</strong><br>
+            +91 9100338382
+          </div>
+        </a>
+
+        <a class="contact-link" href="https://www.linkedin.com/in/umesh-chandra-jangam-348155201" target="_blank">
+          <div class="contact-icon">💼</div>
+          <div>
+            <strong>LinkedIn</strong><br>
+            linkedin.com/in/umesh-chandra-jangam-348155201
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Umesh Chandra Jangam • Civil & Structural Engineering • Mars Habitat Research
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.14
+    });
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    window.addEventListener('load', () => {
+      revealItems.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 40) {
+          item.classList.add('show');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
